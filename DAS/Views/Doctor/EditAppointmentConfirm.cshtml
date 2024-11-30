@@ -1,0 +1,33 @@
+﻿@model DAS.Models.Appointment
+
+@{
+    ViewData["Title"] = "Edit Appointment Confirmation";
+}
+
+<h2>Edit Appointment Confirmation</h2>
+
+<form asp-action="EditAppointmentConfirm" method="post" asp-route-id="@Model.AID">
+    <input type="hidden" asp-for="AID" />
+
+    <div class="form-group">
+        <label asp-for="AllocatedTime">Allocated Time</label>
+        <input asp-for="AllocatedTime" type="time" class="form-control" value="@Model.AllocatedTime?.ToString("HH:mm")" />
+        <span asp-validation-for="AllocatedTime" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Status">Appointment Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="MyAppointments" class="btn btn-secondary">Cancel</a>
+</form>
+
+

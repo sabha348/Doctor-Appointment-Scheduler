@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DAS.Models.Appointment>
+
+@{
+    ViewData["Title"] = "My Appointments";
+}
+
+<h2>My Appointments</h2>
+
+@if (Model.Any())
+{
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Doctor Name (Specialist)</th>
+                    <th>Appointment Date</th>
+                    <th>Allocated Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var appointment in Model)
+            {
+                        <tr>
+                            <td>@appointment.Patient.Name</td> 
+                            <td>@appointment.Doctor.Name (@appointment.Doctor.Specialist)</td> 
+                            <td>@appointment.AppointmentDate.ToString("f")</td> 
+                            <td>
+                        @if (appointment.AllocatedTime.HasValue)
+                        {
+                            @appointment.AllocatedTime.Value.ToString("t") 
+                        }
+                        else
+                        {
+                                        <span class="text-muted">Not allocated</span> 
+                        }
+                            </td>
+                            <td>@appointment.Status</td> 
+                        </tr>
+            }
+            </tbody>
+        </table>
+}
+else
+{
+        <div class="alert alert-info">You have no appointments scheduled.</div>
+}

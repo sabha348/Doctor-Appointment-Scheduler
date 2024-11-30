@@ -1,0 +1,43 @@
+﻿@model DAS.Models.Appointment
+
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<h2>Edit Appointment</h2>
+
+<form asp-action="EditAppointmentConfirm" method="post" asp-route-id="@Model.AID">
+    <div class="form-group">
+        <label asp-for="AID">Appointment ID</label>
+        <input asp-for="AID" class="form-control" readonly /> 
+    </div>
+    <div class="form-group">
+        <label asp-for="Patient.Name">Patient Name</label>
+        <input asp-for="Patient.Name" class="form-control" readonly /> 
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentDate">Appointment Date</label>
+        <input asp-for="AppointmentDate" type="datetime-local" class="form-control" readonly /> 
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AllocatedTime">Allocated Time</label>
+        <input asp-for="AllocatedTime" type="time" class="form-control" />
+        <span asp-validation-for="AllocatedTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status">Appointment Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="MyAppointments" class="btn btn-secondary">Cancel</a>
+</form>
+

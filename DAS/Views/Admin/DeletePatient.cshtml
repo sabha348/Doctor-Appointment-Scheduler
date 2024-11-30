@@ -1,0 +1,16 @@
+﻿@model DAS.Models.Patient
+
+<h2>Delete Patient</h2>
+
+<h3>Are you sure you want to delete this patient</h3>
+
+<div>
+    <h4>Patient: @Model.Name</h4>
+    <h4>Email: @Model.Email</h4>
+</div>
+
+<form asp-action="DeletePatientConfirmed" method="post" asp-route-id="@Model.PID">
+    <input type="hidden" asp-for="PID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Patients" class="btn btn-secondary">Cancel</a>
+</form>

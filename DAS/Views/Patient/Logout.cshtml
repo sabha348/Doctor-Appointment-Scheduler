@@ -1,0 +1,12 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Logout";
+}
+
+<script>
+    setTimeout(function() {
+        window.location.href = '@Url.Action("Index", "Home")';
+    }, 1000);
+</script>
+
+<h2>You have been logged out. Redirecting to Home...</h2>

@@ -1,0 +1,46 @@
+﻿@model DAS.Models.Appointment
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<h2 class="form-title">Book an Appointment</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+        <div class="alert alert-success success-message">
+        @TempData["SuccessMessage"]
+        </div>
+}
+
+<form asp-action="BookAppointment" method="post" id="appointment-form">
+    <div class="form-group">
+        <label asp-for="DoctorID" class="form-label">Select Doctor</label>
+        <select asp-for="DoctorID" class="form-control">
+            <option value="">Select Doctor</option>
+            @foreach (var doctor in ViewBag.Doctors)
+            {
+                    <option value="@doctor.DID">@doctor.Name (@doctor.Specialist)</option>
+            }
+        </select>
+        <span asp-validation-for="DoctorID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentDate" class="form-label">Appointment Date</label>
+        <input asp-for="AppointmentDate" type="datetime-local" class="form-control" min="@(DateTime.Now.ToString("yyyy-MM-ddTHH:mm"))" />
+        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reason" class="form-label">Reason</label>
+        <textarea asp-for="Reason" class="form-control"></textarea>
+        <span asp-validation-for="Reason" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary submit-btn">Book Appointment</button>
+</form>
+
+<link rel="stylesheet" href="~/css/customStyles.css" />
+<script src="~/js/customScripts.js"></script>
+

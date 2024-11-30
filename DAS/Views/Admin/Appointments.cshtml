@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DAS.Models.Appointment>
+
+<h2>Appointment List</h2>
+
+<form method="get" asp-action="SearchAppointments">
+    <div class="form-group">
+        <label for="AID">Search by Appointment ID</label>
+        <input type="text" class="form-control" name="AID" placeholder="Enter Appointment ID" />
+    </div>
+    <div class="form-group">
+        <label for="DoctorName">Search by Doctor Name</label>
+        <input type="text" class="form-control" name="DoctorName" placeholder="Enter Doctor Name" />
+    </div>
+    <div class="form-group">
+        <label for="PatientName">Search by Patient Name</label>
+        <input type="text" class="form-control" name="PatientName" placeholder="Enter Patient Name" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Patient Name</th>
+            <th>Doctor Name</th>
+            <th>Appointment Date</th>
+            <th>Reason</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+                <tr>
+                    <td>@appointment.AID</td>
+                    <td>@appointment.Patient.Name</td>
+                    <td>@appointment.Doctor.Name</td>
+                    <td>@appointment.AppointmentDate</td>
+                    <td>@appointment.Reason</td>
+                    <td>@appointment.Status</td>
+                </tr>
+        }
+    </tbody>
+</table>

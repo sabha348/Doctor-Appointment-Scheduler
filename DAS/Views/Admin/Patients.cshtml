@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DAS.Models.Patient>
+
+<h2>Patient List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+                    <tr>
+                        <td>@patient.Name</td>
+                        <td>@patient.Gender</td>
+                        <td>@patient.Email</td>
+                        <td>
+                            <a asp-action="DeletePatient" method="post" asp-route-id="@patient.PID">Delete</a>
+                        </td>
+                    </tr>
+        }
+    </tbody>
+</table>

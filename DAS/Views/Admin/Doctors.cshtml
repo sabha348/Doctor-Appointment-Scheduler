@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DAS.Models.Doctor>
+
+<h2>Doctor List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Specialist</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model)
+        {
+                    <tr>
+                        <td>@doctor.Name</td>
+                        <td>@doctor.Specialist</td>
+                        <td>@doctor.Email</td>
+                        <td>
+                            <a asp-action="DeleteDoctor" asp-route-id="@doctor.DID" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+        }
+    </tbody>
+</table>
+
+
+

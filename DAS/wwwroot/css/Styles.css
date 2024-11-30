@@ -1,0 +1,554 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+
+.banner {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #007bff;
+    color: white;
+}
+
+    .banner h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .banner p {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    .banner .btn {
+        background-color: #ff6600;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+.speciality-search {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .speciality-search input {
+        padding: 0.5rem;
+        width: 50%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+.specialities {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .specialities .speciality {
+        display: inline-block;
+        width: 30%;
+        margin: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.top-doctors {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .top-doctors .doctor-card {
+        display: inline-block;
+        width: 30%;
+        margin: 1rem;
+        padding: 1rem;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.book-appointment {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .book-appointment .btn {
+        background-color: #ff6600;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-section {
+    display: inline-block;
+    width: 30%;
+    margin: 1rem;
+}
+
+    .footer-section h3 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .footer-section p, .footer-section ul {
+        margin: 1rem 0;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin: 0.5rem 0;
+        }
+
+            .footer-section ul li a {
+                color: white;
+                text-decoration: none;
+            }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+
+.doctor-profile {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem auto;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .doctor-profile h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .doctor-profile p {
+        margin: 1rem 0;
+    }
+
+.booking-slots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+    .booking-slots button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .booking-slots button:hover {
+            background-color: #0056b3;
+        }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+
+.doctor-profile {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem auto;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .doctor-profile h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .doctor-profile p {
+        margin: 1rem 0;
+    }
+
+.booking-slots {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+    .booking-slots .day {
+        margin: 0.5rem;
+    }
+
+    .booking-slots button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .booking-slots button:hover {
+            background-color: #0056b3;
+        }
+
+.btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    display: inline-block;
+}
+
+.related-doctors {
+    margin-top: 2rem;
+}
+
+    .related-doctors h2 {
+        font-size: 1.5rem;
+    }
+
+    .related-doctors p {
+        font-size: 1rem;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #007bff;
+    color: white;
+}
+
+.speciality-list {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .speciality-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+        .speciality-list ul li {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+.doctor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.doctor-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .doctor-card h3 {
+        margin: 0;
+        color: #007bff;
+    }
+
+    .doctor-card p {
+        margin: 0.5rem 0 0;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+}
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+            .navbar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+
+.create-account, .login {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem auto;
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+    .create-account h1, .login h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .create-account p, .login p {
+        margin: 1rem 0;
+    }
+
+    .create-account form, .login form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-account label, .login label {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    .create-account input, .login input {
+        padding: 0.5rem;
+        width: 80%;
+        margin-top: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .create-account .btn, .login .btn {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        cursor: pointer;
+    }
+
+        .create-account .btn:hover, .login .btn:hover {
+            background-color: #0056b3;
+        }
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+

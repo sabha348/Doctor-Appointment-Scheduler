@@ -1,0 +1,221 @@
+﻿@model DAS.ViewModels.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 25%;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            color: #000; 
+        }
+
+        body.dark-mode {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .card {
+            background-color: #454d55;
+            color: #f8f9fa;
+            border-color: #6c757d;
+        }
+
+        body.dark-mode .card p {
+            color: #f8f9fa;
+        }
+
+        .actions {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .actions h4 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #000; 
+            font-weight: 500;
+        }
+
+        .actions ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .actions ul li {
+            margin-bottom: 15px;
+        }
+
+        .actions ul li a {
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: #000; 
+            padding: 10px 20px;
+            border: 1px solid #000; 
+            border-radius: 6px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .actions ul li a:hover {
+            color: white;
+            background-color: #000;
+        }
+
+        body.dark-mode .actions {
+            background-color: #454d55;
+            color: #f8f9fa;
+            box-shadow: none;
+        }
+
+        body.dark-mode .actions h4 {
+            color: #f8f9fa;
+        }
+
+        body.dark-mode .actions ul li a {
+            color: #f8f9fa;
+            border-color: #6c757d;
+        }
+
+        body.dark-mode .actions ul li a:hover {
+            background-color: #6c757d;
+        }
+
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 60px;
+            background-color: transparent;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #343a40;
+            transition: color 0.5s;
+        }
+
+        body.dark-mode .mode-toggle {
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="mode-toggle" id="modeToggle" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Patients</h3>
+            <p>@Model.TotalPatients</p>
+        </div>
+        <div class="card">
+            <h3>Total Doctors</h3>
+            <p>@Model.TotalDoctors</p>
+        </div>
+        <div class="card">
+            <h3>Total Appointments</h3>
+            <p>@Model.TotalAppointments</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <h4>Manage</h4>
+        <ul>
+            <li><a asp-controller="Admin" asp-action="Doctors">
+                <i class="fas fa-user-md"></i> Manage Doctors
+            </a></li>
+            <li><a asp-controller="Admin" asp-action="Appointments">
+                <i class="fas fa-calendar-alt"></i> Manage Appointments
+            </a></li>
+            <li><a asp-controller="Admin" asp-action="SearchAppointments">
+                <i class="fas fa-search"></i> Search Appointments
+            </a></li>
+            <li><a asp-controller="Admin" asp-action="Patients">
+                <i class="fas fa-users"></i> Manage Patients
+            </a></li>
+            <li><a asp-controller="Admin" asp-action="Logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+
+            const modeToggle = document.getElementById('modeToggle');
+            const icon = modeToggle.querySelector('i');
+
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

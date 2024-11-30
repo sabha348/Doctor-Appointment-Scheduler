@@ -1,0 +1,17 @@
+﻿@model DAS.Models.Doctor
+
+<h2>Delete Doctor</h2>
+
+<h3>Are you sure you want to delete this doctor?</h3>
+
+<div>
+    <h4>Doctor: @Model.Name</h4>
+    <h4>Email: @Model.Email</h4>
+    <h4>Specialist: @Model.Specialist</h4>
+</div>
+
+<form asp-action="DeleteDoctorConfirmed" method="post" asp-route-id="@Model.DID">
+    <input type="hidden" asp-for="DID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a asp-action="Doctors" class="btn btn-secondary">Cancel</a>
+</form>
